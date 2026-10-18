@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#c026d3"/>
+</linearGradient>
+<radialGradient id="sheen" cx="0.5" cy="0.28" r="0.75">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#fde68a"/><stop offset="0.55" stop-color="#fbbf24"/><stop offset="1" stop-color="#d97706"/>
+</linearGradient>
+<linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f1eaff"/>
+</linearGradient>
+</defs>
+<rect x="16" y="16" width="480" height="480" rx="118" fill="url(#bg)"/>
+<rect x="16" y="16" width="480" height="480" rx="118" fill="url(#sheen)"/>
+<!-- sparkles -->
+<path d="M96,96 C98.4,110.4 101.6,113.6 116,116 C101.6,118.4 98.4,121.6 96,136 C93.6,121.6 90.4,118.4 76,116 C90.4,113.6 93.6,110.4 96,96 Z" fill="#f0abfc" opacity="0.9"/>
+<path d="M418,106 C421.12,124.72 425.28,128.88 444,132 C425.28,135.12 421.12,139.28 418,158 C414.88,139.28 410.72,135.12 392,132 C410.72,128.88 414.88,124.72 418,106 Z" fill="#fde68a" opacity="0.95"/>
+<path d="M84,352 C86.88,369.28 90.72,373.12 108,376 C90.72,378.88 86.88,382.72 84,400 C81.12,382.72 77.28,378.88 60,376 C77.28,373.12 81.12,369.28 84,352 Z" fill="#a5f3fc" opacity="0.9"/>
+<path d="M428,354 C430.16,366.96 433.04,369.84 446,372 C433.04,374.16 430.16,377.04 428,390 C425.84,377.04 422.96,374.16 410,372 C422.96,369.84 425.84,366.96 428,354 Z" fill="#f0abfc" opacity="0.9"/>
+<path d="M150,48 C151.44,56.64 153.36,58.56 162,60 C153.36,61.44 151.44,63.36 150,72 C148.56,63.36 146.64,61.44 138,60 C146.64,58.56 148.56,56.64 150,48 Z" fill="#ffffff" opacity="0.7"/>
+<path d="M368,38 C369.68,48.08 371.92,50.32 382,52 C371.92,53.68 369.68,55.92 368,66 C366.32,55.92 364.08,53.68 354,52 C364.08,50.32 366.32,48.08 368,38 Z" fill="#ffffff" opacity="0.7"/>
+<!-- antenna -->
+<line x1="256" y1="128" x2="256" y2="92" stroke="#5b21b6" stroke-width="11" stroke-linecap="round"/>
+<path d="M256.0,41.0 L263.1,58.3 L281.7,59.7 L267.4,71.7 L271.9,89.8 L256.0,80.0 L240.1,89.8 L244.6,71.7 L230.3,59.7 L248.9,58.3 Z" fill="url(#gold)" stroke="#b45309" stroke-width="3" stroke-linejoin="round"/>
+<!-- cat ears -->
+<path d="M172,152 L152,80 L230,120 Z" fill="#7c3aed"/>
+<path d="M340,152 L360,80 L282,120 Z" fill="#7c3aed"/>
+<path d="M176,132 L164,96 L206,118 Z" fill="#f9a8d4"/>
+<path d="M336,132 L348,96 L306,118 Z" fill="#f9a8d4"/>
+<!-- head -->
+<rect x="156" y="128" width="200" height="176" rx="66" fill="url(#face)"/>
+<!-- eyes -->
+<ellipse cx="216" cy="208" rx="27" ry="33" fill="#2b2750"/>
+<ellipse cx="296" cy="208" rx="27" ry="33" fill="#2b2750"/>
+<circle cx="225" cy="197" r="10" fill="#fff"/>
+<circle cx="305" cy="197" r="10" fill="#fff"/>
+<circle cx="207" cy="219" r="4.5" fill="#fff" opacity="0.85"/>
+<circle cx="287" cy="219" r="4.5" fill="#fff" opacity="0.85"/>
+<path d="M228,181 C229.08,187.48 230.52,188.92 237,190 C230.52,191.08 229.08,192.52 228,199 C226.92,192.52 225.48,191.08 219,190 C225.48,188.92 226.92,187.48 228,181 Z" fill="#fff"/>
+<path d="M308,181 C309.08,187.48 310.52,188.92 317,190 C310.52,191.08 309.08,192.52 308,199 C306.92,192.52 305.48,191.08 299,190 C305.48,188.92 306.92,187.48 308,181 Z" fill="#fff"/>
+<!-- blush -->
+<ellipse cx="180" cy="252" rx="21" ry="12" fill="#f9a8d4" opacity="0.7"/>
+<ellipse cx="332" cy="252" rx="21" ry="12" fill="#f9a8d4" opacity="0.7"/>
+<!-- cat mouth -->
+<path d="M234,250 q11,13 22,0 q11,13 22,0" stroke="#2b2750" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+<!-- body -->
+<rect x="198" y="310" width="116" height="94" rx="42" fill="#e6dcff"/>
+<rect x="228" y="328" width="56" height="44" rx="22" fill="#faf7ff"/>
+<circle cx="256" cy="350" r="11" fill="#8b5cf6"/>
+<circle cx="256" cy="350" r="15.5" fill="#8b5cf6" opacity="0.25"/>
+<!-- left arm -->
+<rect x="158" y="322" width="30" height="62" rx="15" fill="#7c3aed" transform="rotate(14 173 353)"/>
+<!-- right arm raised high -->
+<line x1="322" y1="324" x2="384" y2="240" stroke="#7c3aed" stroke-width="30" stroke-linecap="round"/>
+<!-- golden key held high -->
+<g transform="rotate(-10 406 240)">
+<circle cx="406" cy="198" r="20" fill="none" stroke="url(#gold)" stroke-width="11"/>
+<line x1="406" y1="218" x2="406" y2="286" stroke="#fbbf24" stroke-width="11" stroke-linecap="round"/>
+<line x1="406" y1="258" x2="427" y2="258" stroke="#fbbf24" stroke-width="9" stroke-linecap="round"/>
+<line x1="406" y1="278" x2="427" y2="278" stroke="#fbbf24" stroke-width="9" stroke-linecap="round"/>
+<line x1="400" y1="192" x2="394" y2="186" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+</g>
+<circle cx="388" cy="246" r="17" fill="#7c3aed"/>
+<!-- feet -->
+<ellipse cx="224" cy="412" rx="27" ry="17" fill="#5b21b6"/>
+<ellipse cx="288" cy="412" rx="27" ry="17" fill="#5b21b6"/>
+<!-- key sparkles -->
+<path d="M408,183 C409.56,192.36 411.64,194.44 421,196 C411.64,197.56 409.56,199.64 408,209 C406.44,199.64 404.36,197.56 395,196 C404.36,194.44 406.44,192.36 408,183 Z" fill="#fde68a"/>
+<path d="M330,170 C331.2,177.2 332.8,178.8 340,180 C332.8,181.2 331.2,182.8 330,190 C328.8,182.8 327.2,181.2 320,180 C327.2,178.8 328.8,177.2 330,170 Z" fill="#fff" opacity="0.85"/>
+</svg>

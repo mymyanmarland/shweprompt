@@ -1,0 +1,13 @@
+🚀 ShwePrompt လာပြီ!
+AI နဲ့ စကားပြောဖို့ prompt ကောင်းကောင်း ရေးတတ်စရာ မလိုတော့ဘူး။
+
+✨ ShwePrompt ဆိုတာ AI prompt တွေ အလွယ်တကူ ဖန်တီးနိုင်တဲ့ Web App တစ်ခု ဖြစ်ပါတယ်။
+📌 Coding, Video, Logo, Image, Web Art, AI Chat — mode 13 မျိုး ပါတယ်။
+📌 အသင့်သုံး prompt 112 ခု ပါတယ်။
+📌 API key ထည့်ထားရင် AI က prompt ကောင်းကောင်း ရေးပေးတယ်။
+📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။
+
+အခမဲ့ သုံးနိုင်ပါတယ် 👇
+🌐 shweprompt.funapp.live
+
+#ShwePrompt #Funapp #AI #PromptEngineering

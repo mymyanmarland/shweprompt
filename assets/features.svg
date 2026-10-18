@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 460" width="1280" height="460" role="img" aria-label="ShwePrompt features">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0918"/>
+      <stop offset="1" stop-color="#131028"/>
+    </linearGradient>
+    <filter id="fglow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="460" fill="url(#fbg)"/>
+  <g font-family="'Segoe UI',system-ui,sans-serif">
+    <!-- card template positions: 3 per row -->
+    <g id="cards">
+      <!-- row 1 -->
+      <g>
+        <rect x="40" y="30" width="386" height="190" rx="16" fill="#171231" stroke="#e8b94a" stroke-width="1.5" opacity="0.98">
+          <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" repeatCount="indefinite"/>
+        </rect>
+        <text x="70" y="100" font-size="44">🎛️</text>
+        <text x="70" y="142" font-size="23" font-weight="700" fill="#f4ead0">13 Builder Modes</text>
+        <text x="70" y="172" font-size="16.5" fill="#b7aee0">Refine · Coding · Image · Chat · Builders</text>
+        <text x="70" y="197" font-size="16.5" fill="#b7aee0">+ templates, library &amp; media tools</text>
+      </g>
+      <g>
+        <rect x="447" y="30" width="386" height="190" rx="16" fill="#171231" stroke="#8b5cf6" stroke-width="1.5">
+          <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" begin="0.5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="477" y="100" font-size="44">✨</text>
+        <text x="477" y="142" font-size="23" font-weight="700" fill="#f4ead0">AI-First Generate</text>
+        <text x="477" y="172" font-size="16.5" fill="#b7aee0">With a relay key, the AI writes your</text>
+        <text x="477" y="197" font-size="16.5" fill="#b7aee0">prompt — with live typing feedback</text>
+      </g>
+      <g>
+        <rect x="854" y="30" width="386" height="190" rx="16" fill="#171231" stroke="#34d399" stroke-width="1.5">
+          <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" begin="1s" repeatCount="indefinite"/>
+        </rect>
+        <text x="884" y="100" font-size="44">🔑</text>
+        <text x="884" y="142" font-size="23" font-weight="700" fill="#f4ead0">BYO Relay Key</text>
+        <text x="884" y="172" font-size="16.5" fill="#b7aee0">Key stays in your browser — nothing</text>
+        <text x="884" y="197" font-size="16.5" fill="#b7aee0">is sent to any ShwePrompt server</text>
+      </g>
+      <!-- row 2 -->
+      <g>
+        <rect x="40" y="244" width="386" height="190" rx="16" fill="#171231" stroke="#67e8f9" stroke-width="1.5">
+          <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" begin="1.5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="70" y="314" font-size="44">🤖</text>
+        <text x="70" y="356" font-size="23" font-weight="700" fill="#f4ead0">7 Relay Models</text>
+        <text x="70" y="386" font-size="16.5" fill="#b7aee0">Gemini · Claude · GPT · Qwen via</text>
+        <text x="70" y="411" font-size="16.5" fill="#b7aee0">RelayModels, switchable in settings</text>
+      </g>
+      <g>
+        <rect x="447" y="244" width="386" height="190" rx="16" fill="#171231" stroke="#f472b6" stroke-width="1.5">
+          <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" begin="2s" repeatCount="indefinite"/>
+        </rect>
+        <text x="477" y="314" font-size="44">📈</text>
+        <text x="477" y="356" font-size="23" font-weight="700" fill="#f4ead0">Crypto + Gold Ticker</text>
+        <text x="477" y="386" font-size="16.5" fill="#b7aee0">Live CoinGecko prices in the header —</text>
+        <text x="477" y="411" font-size="16.5" fill="#b7aee0">BTC &amp; gold at a glance</text>
+      </g>
+      <g>
+        <rect x="854" y="244" width="386" height="190" rx="16" fill="#171231" stroke="#a78bfa" stroke-width="1.5">
+          <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" begin="2.5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="884" y="314" font-size="44" filter="url(#fglow)">💬</text>
+        <text x="884" y="356" font-size="23" font-weight="700" fill="#f4ead0">Guide Bot</text>
+        <text x="884" y="386" font-size="16.5" fill="#b7aee0">A friendly bot parade in the header</text>
+        <text x="884" y="411" font-size="16.5" fill="#b7aee0">that walks you through every mode</text>
+      </g>
+    </g>
+  </g>
+</svg>

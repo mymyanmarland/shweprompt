@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-label="ShwePrompt demo — pick a mode, set options, AI generates the prompt">
+  <defs>
+    <linearGradient id="dbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0918"/>
+      <stop offset="1" stop-color="#141028"/>
+    </linearGradient>
+    <linearGradient id="dbar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="goldBtn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2cd6b"/>
+      <stop offset="1" stop-color="#d9a53f"/>
+    </linearGradient>
+    <linearGradient id="outshine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="dglow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="winClip"><rect x="30" y="30" width="900" height="500" rx="18"/></clipPath>
+    <clipPath id="typeClip"><rect x="0" y="0" width="560" height="60"><animate attributeName="width" values="0;560" keyTimes="0;1" dur="2.6s" begin="1.2s" repeatCount="indefinite"/></rect></clipPath>
+  </defs>
+
+  <rect width="960" height="560" fill="#080614"/>
+  <g clip-path="url(#winClip)">
+    <rect x="30" y="30" width="900" height="500" rx="18" fill="url(#dbg)" stroke="#3b2f66" stroke-width="1.5"/>
+
+    <!-- window chrome -->
+    <rect x="30" y="30" width="900" height="52" fill="#1b1533"/>
+    <circle cx="62" cy="56" r="7" fill="#f87171"/><circle cx="86" cy="56" r="7" fill="#fbbf24"/><circle cx="110" cy="56" r="7" fill="#34d399"/>
+    <text x="150" y="64" font-size="19" fill="#cfc9ea" font-family="'Segoe UI',system-ui,sans-serif" font-weight="600">ShwePrompt — Prompt Builder</text>
+    <g font-size="15" font-family="'Segoe UI',system-ui,sans-serif">
+      <rect x="700" y="40" width="92" height="32" rx="16" fill="none" stroke="#e8b94a" stroke-width="1.2" opacity="0.8"/>
+      <text x="746" y="62" text-anchor="middle" fill="#e8b94a" font-weight="600">🪙 1,240</text>
+      <rect x="800" y="40" width="100" height="32" rx="16" fill="#10b981" opacity="0.16"/>
+      <text x="850" y="62" text-anchor="middle" fill="#6ee7b7" font-weight="600">BTC $97.2k</text>
+    </g>
+
+    <!-- mode tabs -->
+    <g font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600">
+      <rect x="60" y="104" width="150" height="38" rx="19" fill="url(#goldBtn)"/>
+      <text x="135" y="129" text-anchor="middle" fill="#2a1f08">✨ Refine</text>
+      <rect x="220" y="104" width="150" height="38" rx="19" fill="#241c48" stroke="#4c3f86"/>
+      <text x="295" y="129" text-anchor="middle" fill="#b7aee0">💻 Coding</text>
+      <rect x="380" y="104" width="150" height="38" rx="19" fill="#241c48" stroke="#4c3f86"/>
+      <text x="455" y="129" text-anchor="middle" fill="#b7aee0">🎨 Image</text>
+      <rect x="540" y="104" width="150" height="38" rx="19" fill="#241c48" stroke="#4c3f86"/>
+      <text x="615" y="129" text-anchor="middle" fill="#b7aee0">📚 Library</text>
+    </g>
+
+    <!-- left: options panel -->
+    <g font-family="'Segoe UI',system-ui,sans-serif">
+      <text x="60" y="180" font-size="15" fill="#8f86b8" font-weight="600" letter-spacing="2">YOUR IDEA</text>
+      <rect x="60" y="192" width="380" height="52" rx="12" fill="#171231" stroke="#4c3f86"/>
+      <g clip-path="url(#typeClip)">
+        <text x="78" y="225" font-size="19" fill="#f0ecff">A landing page for a tea shop in Yangon…</text>
+      </g>
+      <rect x="424" y="206" width="3" height="24" fill="#e8b94a">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+
+      <text x="60" y="282" font-size="15" fill="#8f86b8" font-weight="600" letter-spacing="2">METHOD</text>
+      <rect x="60" y="294" width="184" height="44" rx="22" fill="#8b5cf6"/>
+      <text x="152" y="322" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">Chain-of-Thought</text>
+      <rect x="256" y="294" width="184" height="44" rx="22" fill="#171231" stroke="#4c3f86"/>
+      <text x="348" y="322" text-anchor="middle" font-size="16" fill="#b7aee0">Role-Play</text>
+
+      <text x="60" y="376" font-size="15" fill="#8f86b8" font-weight="600" letter-spacing="2">TONE</text>
+      <rect x="60" y="388" width="120" height="44" rx="22" fill="#171231" stroke="#4c3f86"/>
+      <text x="120" y="416" text-anchor="middle" font-size="16" fill="#b7aee0">Friendly</text>
+      <rect x="192" y="388" width="130" height="44" rx="22" fill="#8b5cf6"/>
+      <text x="257" y="416" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">Persuasive</text>
+
+      <!-- generate button -->
+      <g>
+        <rect x="60" y="452" width="380" height="54" rx="16" fill="url(#goldBtn)" filter="url(#dglow)">
+          <animate attributeName="opacity" values="1;0.82;1" dur="2.4s" repeatCount="indefinite"/>
+        </rect>
+        <text x="250" y="486" text-anchor="middle" font-size="21" font-weight="800" fill="#2a1f08">✨ Generate with AI</text>
+        <rect x="60" y="452" width="120" height="54" fill="url(#outshine)" opacity="0.55">
+          <animateTransform attributeName="transform" type="translate" values="-140 0; 420 0" dur="2.8s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+
+    <!-- right: output panel -->
+    <g font-family="'Segoe UI',system-ui,sans-serif">
+      <rect x="470" y="162" width="430" height="344" rx="14" fill="#120e26" stroke="#4c3f86"/>
+      <text x="494" y="196" font-size="15" fill="#8f86b8" font-weight="600" letter-spacing="2">GENERATED PROMPT</text>
+      <g font-size="17" fill="#ddd7f5">
+        <text x="494" y="232">You are a senior landing-page copywriter…<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.35;0.93;1" dur="12s" repeatCount="indefinite"/></text>
+        <text x="494" y="262">Think step-by-step about the tea shop's…<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.42;0.93;1" dur="12s" repeatCount="indefinite"/></text>
+        <text x="494" y="292">audience in Yangon: students, office…<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.48;0.93;1" dur="12s" repeatCount="indefinite"/></text>
+        <text x="494" y="322">Use a persuasive, warm tone. Structure:…<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.55;0.93;1" dur="12s" repeatCount="indefinite"/></text>
+        <text x="494" y="352">hero → story → menu → reviews → CTA…<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.62;0.93;1" dur="12s" repeatCount="indefinite"/></text>
+        <text x="494" y="382">End with 3 headline variants to A/B test.<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.68;0.93;1" dur="12s" repeatCount="indefinite"/></text>
+      </g>
+      <g>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.75;0.93;1" dur="12s" repeatCount="indefinite"/>
+        <rect x="494" y="404" width="150" height="38" rx="19" fill="#8b5cf6"/>
+        <text x="569" y="429" text-anchor="middle" font-size="15" fill="#fff" font-weight="600">📋 Copy</text>
+        <rect x="656" y="404" width="150" height="38" rx="19" fill="#171231" stroke="#4c3f86"/>
+        <text x="731" y="429" text-anchor="middle" font-size="15" fill="#b7aee0" font-weight="600">💾 Save</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<style>
+.spw{box-sizing:border-box;max-width:100%;font-family:system-ui,sans-serif}
+.row{display:flex;gap:8px;align-items:flex-start;padding:8px 10px;border-bottom:1px solid var(--hatch-widget-border)}
+.row:last-child{border-bottom:none}
+.txt{flex:1;min-width:0;color:var(--hatch-widget-text);font-size:14px;line-height:1.5;word-break:break-word;white-space:pre-wrap}
+.empty{color:var(--hatch-widget-muted)}
+.cp{flex:none;background:var(--hatch-widget-surface);color:var(--hatch-widget-text);border:1px solid var(--hatch-widget-border);border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer}
+.cp:active{transform:scale(.96)}
+.cp.done{background:var(--hatch-widget-accent);color:var(--hatch-widget-on-accent);border-color:var(--hatch-widget-accent)}
+.head{padding:10px;font-size:13px;color:var(--hatch-widget-muted)}
+</style>
+<div class="spw">
+<div class="head">Tap Copy on any line to copy it</div>
+<div class="row"><div class="txt">🚀 ShwePrompt လာပြီ!</div><button class="cp" data-i="0">Copy</button></div>
+<div class="row"><div class="txt">AI နဲ့ စကားပြောဖို့ prompt ကောင်းကောင်း ရေးတတ်စရာ မလိုတော့ဘူး။</div><button class="cp" data-i="1">Copy</button></div>
+<div class="row"><div class="txt"><span class=empty>(empty line)</span></div><button class="cp" data-i="2">Copy</button></div>
+<div class="row"><div class="txt">✨ ShwePrompt ဆိုတာ AI prompt တွေ အလွယ်တကူ ဖန်တီးနိုင်တဲ့ Web App တစ်ခု ဖြစ်ပါတယ်။</div><button class="cp" data-i="3">Copy</button></div>
+<div class="row"><div class="txt">📌 Coding, Video, Logo, Image, Web Art, AI Chat — mode 13 မျိုး ပါတယ်။</div><button class="cp" data-i="4">Copy</button></div>
+<div class="row"><div class="txt">📌 အသင့်သုံး prompt 112 ခု ပါတယ်။</div><button class="cp" data-i="5">Copy</button></div>
+<div class="row"><div class="txt">📌 API key ထည့်ထားရင် AI က prompt ကောင်းကောင်း ရေးပေးတယ်။</div><button class="cp" data-i="6">Copy</button></div>
+<div class="row"><div class="txt">📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။</div><button class="cp" data-i="7">Copy</button></div>
+<div class="row"><div class="txt"><span class=empty>(empty line)</span></div><button class="cp" data-i="8">Copy</button></div>
+<div class="row"><div class="txt">အခမဲ့ သုံးနိုင်ပါတယ် 👇</div><button class="cp" data-i="9">Copy</button></div>
+<div class="row"><div class="txt">🌐 shweprompt.funapp.live</div><button class="cp" data-i="10">Copy</button></div>
+<div class="row"><div class="txt"><span class=empty>(empty line)</span></div><button class="cp" data-i="11">Copy</button></div>
+<div class="row"><div class="txt">#ShwePrompt #Funapp #AI #PromptEngineering</div><button class="cp" data-i="12">Copy</button></div>
+</div>
+<script>
+(function(){
+var lines = ["🚀 ShwePrompt လာပြီ!", "AI နဲ့ စကားပြောဖို့ prompt ကောင်းကောင်း ရေးတတ်စရာ မလိုတော့ဘူး။", "", "✨ ShwePrompt ဆိုတာ AI prompt တွေ အလွယ်တကူ ဖန်တီးနိုင်တဲ့ Web App တစ်ခု ဖြစ်ပါတယ်။", "📌 Coding, Video, Logo, Image, Web Art, AI Chat — mode 13 မျိုး ပါတယ်။", "📌 အသင့်သုံး prompt 112 ခု ပါတယ်။", "📌 API key ထည့်ထားရင် AI က prompt ကောင်းကောင်း ရေးပေးတယ်။", "📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။", "", "အခမဲ့ သုံးနိုင်ပါတယ် 👇", "🌐 shweprompt.funapp.live", "", "#ShwePrompt #Funapp #AI #PromptEngineering"];
+function copyText(t, btn){
+  function ok(){ btn.textContent="Copied"; btn.classList.add("done");
+    setTimeout(function(){ btn.textContent="Copy"; btn.classList.remove("done"); },1200); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(ok, function(){ fallback(); });
+  } else { fallback(); }
+  function fallback(){
+    var ta=document.createElement("textarea"); ta.value=t; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+document.querySelectorAll(".cp").forEach(function(b){
+  b.addEventListener("click", function(){ copyText(lines[+b.dataset.i], b); });
+});
+})();
+</script>

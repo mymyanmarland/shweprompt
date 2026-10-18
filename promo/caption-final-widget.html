@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--hatch-bg:#14101f;--hatch-card:#1e1830;--hatch-text:#f0eef8;--hatch-dim:#a9a3c7;--hatch-accent:#f5c55a;--hatch-border:#3a3055}
+*{box-sizing:border-box}body{margin:0;background:var(--hatch-bg);color:var(--hatch-text);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;padding:14px}
+.cap-row{display:flex;align-items:center;gap:10px;background:var(--hatch-card);border:1px solid var(--hatch-border);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.cap-txt{flex:1;font-size:15px;line-height:1.5;word-break:break-word}
+.cap-gap{height:6px}
+.cap-btn{flex:none;background:var(--hatch-accent);color:#241a05;border:0;border-radius:9px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+.cap-btn.ok{background:#7ee2a8}
+h3{margin:4px 2px 12px;font-size:16px}
+</style></head><body>
+<h3>📋 ShwePrompt Caption — နှိပ်၍ ကူးယူပါ</h3>
+<div class="cap-row"><span class="cap-txt">🚀 ShwePrompt ဆိုတာ?</span><button class="cap-btn" data-i="0">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">AI က ခိုင်းဖို့ prompt တွေ ဖန်တီးပေးတယ် website ဖြင်ပါတယ်။</span><button class="cap-btn" data-i="1">Copy</button></div>
+<div class="cap-gap"></div>
+<div class="cap-row"><span class="cap-txt">✨ အလုပ်လုပ် 3 ဆင့်:</span><button class="cap-btn" data-i="3">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">1️⃣ Mode ရွေး — 13 မျိုးထဲက ကရိုက်တာရွေး</span><button class="cap-btn" data-i="4">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">2️⃣ စာ ထည့် — လုပ် ချင်တာ ရေး ထည့်</span><button class="cap-btn" data-i="5">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">3️⃣ Generate နှိပ် — prompt ကောင်း ရပြီ!</span><button class="cap-btn" data-i="6">Copy</button></div>
+<div class="cap-gap"></div>
+<div class="cap-row"><span class="cap-txt">📌 အသင့်သုံး prompt 112 ခု ပါတယ်။</span><button class="cap-btn" data-i="8">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">📌 AI ရေးပေးတယ် — key ထည့်ပြီး သုံးနိုင်တယ်။</span><button class="cap-btn" data-i="9">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။</span><button class="cap-btn" data-i="10">Copy</button></div>
+<div class="cap-gap"></div>
+<div class="cap-row"><span class="cap-txt">အခမဲ့ သုံးနိုင်ပါတယ် 👇</span><button class="cap-btn" data-i="12">Copy</button></div>
+<div class="cap-row"><span class="cap-txt">🌐 shweprompt.funapp.live</span><button class="cap-btn" data-i="13">Copy</button></div>
+<div class="cap-gap"></div>
+<div class="cap-row"><span class="cap-txt">#ShwePrompt #AI #Prompt</span><button class="cap-btn" data-i="15">Copy</button></div>
+<script>
+const LINES = ["🚀 ShwePrompt ဆိုတာ?","AI က ခိုင်းဖို့ prompt တွေ ဖန်တီးပေးတယ် website ဖြင်ပါတယ်။","","✨ အလုပ်လုပ် 3 ဆင့်:","1️⃣ Mode ရွေး — 13 မျိုးထဲက ကရိုက်တာရွေး","2️⃣ စာ ထည့် — လုပ် ချင်တာ ရေး ထည့်","3️⃣ Generate နှိပ် — prompt ကောင်း ရပြီ!","","📌 အသင့်သုံး prompt 112 ခု ပါတယ်။","📌 AI ရေးပေးတယ် — key ထည့်ပြီး သုံးနိုင်တယ်။","📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။","","အခမဲ့ သုံးနိုင်ပါတယ် 👇","🌐 shweprompt.funapp.live","","#ShwePrompt #AI #Prompt"];
+document.querySelectorAll('.cap-btn').forEach(b=>b.addEventListener('click',async()=>{
+  const t=LINES[+b.dataset.i]||'';
+  try{await navigator.clipboard.writeText(t);}catch(e){
+    const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');}catch(_){} ta.remove();
+  }
+  b.textContent='✓';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy';b.classList.remove('ok');},1200);
+}));
+</script></body></html>

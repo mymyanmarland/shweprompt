@@ -1,0 +1,25 @@
+<div style="box-sizing:border-box;background:var(--hatch-widget-surface);border:1px solid var(--hatch-widget-border);border-radius:14px;padding:16px"><div style="font-size:16px;font-weight:700;margin-bottom:10px;color:var(--hatch-widget-text)">📋 ShwePrompt Caption</div><div style="white-space:pre-wrap;font-size:15px;line-height:1.7;color:var(--hatch-widget-text);background:var(--hatch-widget-surface-muted);border:1px solid var(--hatch-widget-border);border-radius:10px;padding:12px;margin-bottom:12px">🚀 ShwePrompt ဆိုတာ?
+AI က ခိုင်းဖို့ prompt တွေ ဖန်တီးပေးတယ် website ဖြင်ပါတယ်။
+
+✨ အလုပ်လုပ် 3 ဆင့်:
+1️⃣ Mode ရွေး — 13 မျိုးထဲက ကရိုက်တာရွေး
+2️⃣ စာ ထည့် — လုပ် ချင်တာ ရေး ထည့်
+3️⃣ Generate နှိပ် — prompt ကောင်း ရပြီ!
+
+📌 အသင့်သုံး prompt 112 ခု ပါတယ်။
+📌 AI ရေးပေးတယ် — key ထည့်ပြီး သုံးနိုင်တယ်။
+📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။
+
+အခမဲ့ သုံးနိုင်ပါတယ် 👇
+🌐 shweprompt.funapp.live
+
+#ShwePrompt #AI #Prompt</div><button id="capcopy" style="width:100%;background:var(--hatch-widget-accent);color:var(--hatch-widget-on-accent);border:0;border-radius:10px;padding:12px;font-size:15px;font-weight:700;cursor:pointer">📋 တစ်ပုဒ်လုံး ကူးယူမယ်</button></div><script>
+const FULL = "🚀 ShwePrompt ဆိုတာ?\nAI က ခိုင်းဖို့ prompt တွေ ဖန်တီးပေးတယ် website ဖြင်ပါတယ်။\n\n✨ အလုပ်လုပ် 3 ဆင့်:\n1️⃣ Mode ရွေး — 13 မျိုးထဲက ကရိုက်တာရွေး\n2️⃣ စာ ထည့် — လုပ် ချင်တာ ရေး ထည့်\n3️⃣ Generate နှိပ် — prompt ကောင်း ရပြီ!\n\n📌 အသင့်သုံး prompt 112 ခု ပါတယ်။\n📌 AI ရေးပေးတယ် — key ထည့်ပြီး သုံးနိုင်တယ်။\n📌 Key က browser ထဲမှာပဲ ရှိတယ် — လုံခြုံတယ်။\n\nအခမဲ့ သုံးနိုင်ပါတယ် 👇\n🌐 shweprompt.funapp.live\n\n#ShwePrompt #AI #Prompt";
+document.getElementById("capcopy").addEventListener("click", async (e) => {
+  const b = e.target;
+  try { await navigator.clipboard.writeText(FULL); }
+  catch (_) { const ta = document.createElement("textarea"); ta.value = FULL; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch(_){} ta.remove(); }
+  b.textContent = "\u2713 \u1000\u1030\u1038\u1015\u103c\u102e\u1015\u103c\u102e"; setTimeout(()=>{ b.textContent = "\u1f4cb \u1010\u1005\u103a\u1015\u102f\u1004\u103a\u101c\u1036\u1038 \u1000\u1030\u1038\u101a\u1030\u1019\u103a\u1019\u100a\u103a"; }, 1500);
+});
+</script>
