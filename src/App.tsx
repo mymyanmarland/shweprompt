@@ -7,6 +7,7 @@ import { GeneralMode, RefineMode, CodingMode, VibeMode } from "./modes/builders"
 import { LibraryMode, TextDesignMode } from "./modes/library";
 import { VideoMode, LogoMode, ImageMode, ImageToPromptMode, WebArtMode } from "./modes/media";
 import { ChatMode } from "./modes/chat";
+import { SystemPromptMode } from "./modes/system";
 
 function ModeView({ id }: { id: string }) {
   switch (id) {
@@ -23,6 +24,7 @@ function ModeView({ id }: { id: string }) {
     case "img2prompt": return <ImageToPromptMode />;
     case "webart": return <WebArtMode />;
     case "chat": return <ChatMode />;
+    case "system": return <SystemPromptMode />;
     default: return <GeneralMode />;
   }
 }

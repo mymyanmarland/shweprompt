@@ -89,6 +89,13 @@ export const IMAGE_STYLES = ["Photorealistic", "Digital Painting", "Anime", "Ghi
 export const IMAGE_TYPES = ["Illustration", "Photograph", "Poster", "Wallpaper", "Character Design", "Creature Design", "Landscape", "Portrait", "Fashion Shot", "Product Shot", "Food Photo", "Architecture", "Interior", "Vehicle Concept", "Album Cover", "Book Cover", "Logo Concept", "Icon Set", "Banner", "Thumbnail", "Comic Panel", "Storyboard", "Tattoo Design", "Pattern", "Texture", "Map", "Infographic", "Avatar", "Mascot", "Scene Concept", "Movie Poster", "Game Art", "Splash Art", "Emoji Set", "Sticker Set"];
 export const CAMERA_ANGLES = ["Eye Level", "Low Angle", "High Angle", "Bird's Eye", "Worm's Eye", "Dutch Tilt", "Over-the-Shoulder", "Close-up Macro"];
 
+// ---- System Prompt Builder ----
+export const SYS_APP_TYPES = ["General Assistant", "Shop / Order Bot", "Content / Summary Bot", "Coding Helper", "Tutor", "Customer Support", "Custom"];
+export const SYS_SURFACES = ["Telegram Bot", "Web App", "Mobile App", "Website Chat Widget", "CLI Tool", "API Agent"];
+export const SYS_TONES = ["Warm & Helpful", "Professional", "Concise & Direct", "Friendly & Playful", "Formal", "Expert & Precise"];
+export const SYS_OUTPUT_FORMATS = ["Short chat replies", "Paragraphs", "Step-by-step", "Bullet points", "Structured records (JSON)", "Markdown documents"];
+export const SYS_TOOLS = ["Web search", "Product catalog", "Order database", "Customer records", "File storage", "Payments", "Calendar", "Image generation", "Code execution", "Calculator"];
+
 // ---- Web art ----
 export const WEBART_STYLES = ["Pure CSS Art", "Canvas / JS", "SVG Art", "3D CSS", "Pixel Art (CSS Grid)", "Particle System", "Generative Art", "Glassmorphism", "Fractal", "Gradient Mesh", "Neon Glow", "Isometric CSS", "Parallax Scene", "CSS Animation Loop", "WebGL Shader", "ASCII Art", "Emoji Art", "Data Visualization"];
 export const PALETTES = ["Violet/Pink/Cyan", "Sunset", "Ocean", "Forest", "Monochrome", "Neon Night", "Pastel", "Retro", "Fire"];

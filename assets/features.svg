@@ -19,7 +19,7 @@
           <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.2s" repeatCount="indefinite"/>
         </rect>
         <text x="70" y="100" font-size="44">🎛️</text>
-        <text x="70" y="142" font-size="23" font-weight="700" fill="#f4ead0">13 Builder Modes</text>
+        <text x="70" y="142" font-size="23" font-weight="700" fill="#f4ead0">14 Builder Modes</text>
         <text x="70" y="172" font-size="16.5" fill="#b7aee0">Refine · Coding · Image · Chat · Builders</text>
         <text x="70" y="197" font-size="16.5" fill="#b7aee0">+ templates, library &amp; media tools</text>
       </g>

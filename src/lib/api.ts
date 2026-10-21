@@ -83,6 +83,43 @@ export function friendlyError(e: unknown): string {
   return m;
 }
 
+// ---- image generation (gpt-image-2, OpenAI-compatible) ----
+export const IMAGE_MODEL = "gpt-image-2";
+
+export interface GeneratedImage { b64?: string; url?: string; }
+
+export async function generateImage(prompt: string, size = "1024x1024"): Promise<GeneratedImage> {
+  const key = getApiKey();
+  if (!key) throw new Error("NO_KEY");
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 120_000); // image gen can take a while
+  try {
+    const res = await fetch(`${RELAY_BASE}/images/generations`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key}`,
+      },
+      body: JSON.stringify({ model: IMAGE_MODEL, prompt, size }),
+      signal: ctrl.signal,
+    });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      throw new Error(`Image API ${res.status}: ${detail.slice(0, 200)}`);
+    }
+    const j = await res.json();
+    const d = Array.isArray(j?.data) ? j.data[0] : null;
+    if (d && typeof d.b64_json === "string" && d.b64_json) return { b64: d.b64_json };
+    if (d && typeof d.url === "string" && d.url) return { url: d.url };
+    throw new Error("No image in relay response");
+  } catch (e) {
+    if (e instanceof Error && e.name === "AbortError") throw new Error("Image request timed out (120s). Try again.");
+    throw e;
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 // ---- crypto ticker (CoinGecko, no key) ----
 export interface TickerItem { symbol: string; price: number; change: number; }
 const CG_IDS: Array<[string, string]> = [

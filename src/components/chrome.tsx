@@ -3,7 +3,7 @@ import {
   Sparkles, KeyRound, Bot, Copy, Check, Rocket, Loader2, TriangleAlert,
   Lightbulb, Search, Clock3, Wand2, Code2, Palette, Package,
   Type, Clapperboard, Film, Crown, Image as ImageIcon, ScanSearch, Globe,
-  ArrowUpRight,
+  ArrowUpRight, ScrollText,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
@@ -176,6 +176,7 @@ export const MODES: ModeDef[] = [
   { id: "refine", icon: <Wand2 className="size-5" />, label: "Refine", desc: "Turn rough prompts into expert ones" },
   { id: "coding", icon: <Code2 className="size-5" />, label: "Coding", desc: "Prompts for building & fixing code" },
   { id: "vibe", icon: <Palette className="size-5" />, label: "Vibe", desc: "Full app briefs for AI builders" },
+  { id: "system", icon: <ScrollText className="size-5" />, label: "System Prompt", desc: "Build a full system prompt for a bot or agent" },
   { id: "library", icon: <Package className="size-5" />, label: "Ready-Made", desc: "112 ready-made project prompts" },
   { id: "textdesign", icon: <Type className="size-5" />, label: "Text Design", desc: "63 text-effect styles for image AI" },
   { id: "video-mm", icon: <Clapperboard className="size-5" />, label: "Video MM", desc: "Veo-optimized video prompts (Myanmar)" },
@@ -331,7 +332,7 @@ function ModelModal() {
 // ---------- prompt output ----------
 // Shared AI prompt writer: key present → AI writes the prompt from the brief;
 // no key (or AI error) → falls back to the locally assembled brief.
-const AI_WRITER_SYSTEM =
+export const AI_WRITER_SYSTEM =
   "You are an elite prompt engineer. Turn the brief below into a complete, polished, ready-to-use prompt. Output ONLY the prompt itself — no explanations, no preamble, no quotation marks around it.";
 
 export async function generatePrompt(

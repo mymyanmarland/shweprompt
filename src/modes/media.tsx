@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
-import { Chip, OptionSection, Field, inputCls, PromptOutput, useApp, StickyBar, Button, generatePrompt, Select, SelectTrigger, SelectValue, SelectContent, SelectItem, Slider, Switch } from "../components/chrome";
-import { chatCompletion, friendlyError, RELAY_MODELS } from "../lib/api";
+import { Loader2 } from "lucide-react";
+import { Chip, OptionSection, Field, inputCls, PromptOutput, useApp, StickyBar, Button, generatePrompt, AI_WRITER_SYSTEM, Select, SelectTrigger, SelectValue, SelectContent, SelectItem, Slider, Switch } from "../components/chrome";
+import { chatCompletion, friendlyError, generateImage, RELAY_MODELS } from "../lib/api";
 import {
   VIDEO_TYPES_MM, VIDEO_TYPES_EN, VISUAL_STYLES, VISUAL_STYLES_EN, CAMERA_MOVES,
   DURATIONS, ASPECTS, MOODS, LIGHTING, COLOR_GRADING, TRANSITIONS, SOUND_DESIGN,
@@ -144,7 +145,16 @@ export function LogoMode() {
 }
 
 // ================= IMAGE =================
+const ASPECT_SIZES: Record<string, string> = {
+  "16:9": "1536x1024",
+  "9:16": "1024x1536",
+  "1:1": "1024x1024",
+  "4:3": "1024x1024",
+  "21:9": "1536x1024",
+};
+
 export function ImageMode() {
+  const { needKey } = useApp();
   const [subject, setSubject] = useState("");
   const [style, setStyle] = useState(IMAGE_STYLES[0]);
   const [type, setType] = useState(IMAGE_TYPES[0]);
@@ -156,19 +166,58 @@ export function ImageMode() {
   const [prompt, setPrompt] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [imgSrc, setImgSrc] = useState<string | null>(null);
+  const [imgBusy, setImgBusy] = useState(false);
+  const [imgErr, setImgErr] = useState<string | null>(null);
+
+  const buildBrief = () => [
+    `# IMAGE PROMPT`,
+    ``,
+    `${style} ${type.toLowerCase()} of ${subject || "(describe your subject above)"}.`,
+    `${light} lighting, ${angle.toLowerCase()} camera angle.`,
+    details ? `Details: ${details}.` : null,
+    `Aspect ratio ${aspect}. Ultra-detailed, sharp focus, professional composition.`,
+    ``,
+    `Negative prompt: ${negative}`,
+  ].filter((x) => x !== null).join("\n");
 
   const generate = () => {
-    const brief = [
-      `# IMAGE PROMPT`,
-      ``,
-      `${style} ${type.toLowerCase()} of ${subject || "(describe your subject above)"}.`,
-      `${light} lighting, ${angle.toLowerCase()} camera angle.`,
-      details ? `Details: ${details}.` : null,
-      `Aspect ratio ${aspect}. Ultra-detailed, sharp focus, professional composition.`,
-      ``,
-      `Negative prompt: ${negative}`,
-    ].filter((x) => x !== null).join("\n");
-    generatePrompt(brief, { setPrompt, setBusy, setErr });
+    setImgSrc(null); setImgErr(null);
+    generatePrompt(buildBrief(), { setPrompt, setBusy, setErr });
+  };
+
+  const renderImage = async (text: string) => {
+    const img = await generateImage(text, ASPECT_SIZES[aspect] || "1024x1024");
+    setImgSrc(img.b64 ? `data:image/png;base64,${img.b64}` : (img.url as string));
+  };
+
+  // AI writes the prompt, then gpt-image-2 renders it — one tap.
+  const generateAndImage = async () => {
+    if (needKey()) return;
+    setBusy(true); setImgBusy(true);
+    setErr(null); setImgErr(null); setImgSrc(null); setPrompt("");
+    try {
+      const text = (await chatCompletion(
+        [
+          { role: "system", content: AI_WRITER_SYSTEM },
+          { role: "user", content: buildBrief() },
+        ],
+        { maxTokens: 2500 }
+      )).trim();
+      setPrompt(text);
+      setBusy(false);
+      await renderImage(text);
+    } catch (e) { setImgErr(friendlyError(e)); }
+    finally { setBusy(false); setImgBusy(false); }
+  };
+
+  // Render the currently shown prompt (no prompt rewrite).
+  const renderFromPrompt = async () => {
+    if (!prompt || needKey()) return;
+    setImgBusy(true); setImgErr(null); setImgSrc(null);
+    try { await renderImage(prompt); }
+    catch (e) { setImgErr(friendlyError(e)); }
+    finally { setImgBusy(false); }
   };
 
   return (
@@ -195,9 +244,39 @@ export function ImageMode() {
       </div>
       {err && <p className="text-center text-sm text-rose-300">⚠️ {err}</p>}
       <StickyBar>
-        <Button size="lg" onClick={generate} disabled={busy}>{busy ? "🖼️ Writing with AI…" : "🖼️ Generate Image Prompt"}</Button>
+        <Button size="lg" onClick={generate} disabled={busy || imgBusy}>{busy && !imgBusy ? "🖼️ Writing with AI…" : "🖼️ Generate Image Prompt"}</Button>
+        <Button size="lg" variant="secondary" onClick={generateAndImage} disabled={busy || imgBusy}>
+          {imgBusy ? <><Loader2 className="size-4 animate-spin" /> Painting…</> : "🎨 Prompt + Image"}
+        </Button>
       </StickyBar>
-      <PromptOutput prompt={prompt} busy={busy} />
+      <PromptOutput prompt={prompt} busy={busy && !imgBusy} />
+      {prompt && !busy && !imgSrc && (
+        <div className="flex justify-center">
+          <Button size="sm" variant="secondary" onClick={renderFromPrompt} disabled={imgBusy}>
+            {imgBusy ? <><Loader2 className="size-3.5 animate-spin" /> Rendering…</> : "🎨 Render image from this prompt"}
+          </Button>
+        </div>
+      )}
+      {(imgBusy || imgErr || imgSrc) && (
+        <div className="liquid rounded-2xl p-4 md:p-5 grid gap-3">
+          {imgBusy && (
+            <div className="flex items-center justify-center gap-2 py-10 text-sm text-zinc-300">
+              <Loader2 className="size-5 animate-spin" /> 🎨 gpt-image-2 is painting your image…
+            </div>
+          )}
+          {imgErr && <p className="text-center text-sm text-rose-300">⚠️ {imgErr}</p>}
+          {imgSrc && (
+            <>
+              <img src={imgSrc} alt="AI generated" className="mx-auto max-h-[32rem] rounded-xl" />
+              <div className="flex justify-center">
+                <a href={imgSrc} download="shweprompt-image.png">
+                  <Button size="sm" variant="secondary">⬇️ Download PNG</Button>
+                </a>
+              </div>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -9,7 +9,7 @@
 [![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
 [![BYO key](https://img.shields.io/badge/key-stays_in_browser-34d399?style=for-the-badge)](#private-by-design)
 
-**ShwePrompt is an AI-first prompt studio.** Pick one of 13 builder modes, set a few
+**ShwePrompt is an AI-first prompt studio.** Pick one of 14 builder modes, set a few
 options — and with your own relay key, the AI writes the perfect prompt for you,
 live, with a friendly typing animation. No key? It still assembles a solid prompt
 locally, instantly.
@@ -38,7 +38,7 @@ detail levels — and one **✨ Generate** button:
   and the AI path stays one tap away.
 - **AI errors?** → it falls back to the local build and tells you what happened.
 
-## The 13 modes
+## The 14 modes
 
 | Mode | What it builds |
 |---|---|
@@ -55,12 +55,13 @@ detail levels — and one **✨ Generate** button:
 | 🎬 Video MM | Veo-optimized video prompts (Myanmar) |
 | 🌐 Web Art | Code-art prompts + generation |
 | ⚙️ General | Structured prompts from any idea |
+| 🧩 System Prompt | Complete system prompts for bots & agents — identity, tone, memory, tools, examples, limits |
 
 Plus a **Guide Bot** in the header that walks you through every mode, and a live
 **crypto + gold ticker** (CoinGecko) for good measure.
 
 <p align="center">
-<img src="./assets/features.svg" width="100%" alt="ShwePrompt features: 13 builder modes, AI-first generate, BYO relay key, 7 relay models, crypto and gold ticker, guide bot."/>
+<img src="./assets/features.svg" width="100%" alt="ShwePrompt features: 14 builder modes, AI-first generate, BYO relay key, 7 relay models, crypto and gold ticker, guide bot."/>
 </p>
 
 ## Private by design
